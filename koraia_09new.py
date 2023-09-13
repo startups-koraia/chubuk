@@ -9,7 +9,7 @@ Created on Thu Sep 12 20:23:09 2019
 import subprocess
 
 # ./sp_firedetect 프로그램을 실행하고, 그 프로그램의 출력을 파이프로 연결한다.
-process1 = subprocess.Popen("./sp_firedetect", stdout=subprocess.PIPE, shell=True)
+process1 = subprocess.Popen("./sp_firedetect > /dev/null 2>&1", stdout=subprocess.PIPE, shell=True)
 
 # tail -f ../log/sp_firedetect_20230912.log 명령을 실행하고, 그 프로그램의 출력을 파이프로 연결한다.
 process2 = subprocess.Popen("tail -f ../log/sp_firedetect_20230913.log", stdout=subprocess.PIPE, shell=True)
